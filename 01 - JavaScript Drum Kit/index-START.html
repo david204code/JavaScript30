@@ -56,12 +56,8 @@
     <audio data-key="76" src="sounds/tink.wav"></audio>
 
     <script>
-      // first listen to the key up event
-      window.addEventListener("keydown", function (e) {
-        // console.log(e.keyCode);
-
+      function playSound(e) {
         // check if they is element with those date-key
-
         // audio[data-key=65] === attribute selectors
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
         // console.log(audio);
@@ -74,7 +70,7 @@
         audio.play();
         // add the playing class to the html event for CSS effects
         key.classList.add("playing");
-      });
+      }
 
       function removeTransition(e) {
         // console.log(e);
@@ -90,6 +86,9 @@
       keys.forEach((key) =>
         key.addEventListener("transitionend", removeTransition)
       );
+
+      // first listen to the key up event
+      window.addEventListener("keydown", playSound);
     </script>
   </body>
 </html>
