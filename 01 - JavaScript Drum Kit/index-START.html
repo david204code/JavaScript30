@@ -67,7 +67,7 @@
         // console.log(audio);
 
         const key = document.querySelector(`.key[data-key="${e.keyCode}"`);
-        console.log(key);
+        // console.log(key);
 
         if (!audio) return; //stop the function from running all together
         audio.currentTime = 0; //rewind to the start when audio.play is called
@@ -75,6 +75,21 @@
         // add the playing class to the html event for CSS effects
         key.classList.add("playing");
       });
+
+      function removeTransition(e) {
+        // console.log(e);
+        if (e.propertyName !== "transform") return;
+        // console.log(e.propertyName);
+
+        // console.log(this);
+        this.classList.remove("playing");
+      }
+
+      const keys = document.querySelectorAll(".key");
+      // nodeList of transition end event
+      keys.forEach((key) =>
+        key.addEventListener("transitionend", removeTransition)
+      );
     </script>
   </body>
 </html>
