@@ -67,6 +67,7 @@
         // console.log(audio);
 
         if (!audio) return; //stop the function from running all together
+        audio.currentTime = 0; //rewind to the start when audio.play is called
         audio.play();
       });
     </script>
