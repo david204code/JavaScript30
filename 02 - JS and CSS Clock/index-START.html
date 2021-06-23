@@ -65,6 +65,18 @@
       }
     </style>
 
-    <script></script>
+    <script>
+      // function for the second hand,seconds
+      function setDate() {
+        // grab the date
+        const now = new Date();
+        // console.log(now);
+        const second = now.getSeconds();
+        // console.log(second);
+      }
+
+      // runs every second which is a 1000 millisecond
+      setInterval(setDate, 1000);
+    </script>
   </body>
 </html>
