@@ -68,14 +68,14 @@
     <script>
       const secondHand = document.querySelector(".second-hand");
 
-      // function for the second hand,seconds
+      // function for the secondshand/seconds
       function setDate() {
         // grab the date
         const now = new Date();
         // console.log(now);
         const second = now.getSeconds();
         // console.log(second);
-        const secondsDegrees = (second / 60) * 360;
+        const secondsDegrees = (second / 60) * 360 + 90;
         // console.log(secondsDegrees);
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
       }
