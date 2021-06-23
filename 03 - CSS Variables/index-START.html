@@ -51,6 +51,10 @@
         filter: blur(var(--blur));
       }
 
+      .hl {
+        color: var(--base);
+      }
+
       /*
       misc styles, nothing to do with CSS variables
     */
@@ -73,6 +77,18 @@
       }
     </style>
 
-    <script></script>
+    <script>
+      const inputs = document.querySelectorAll(".controls input");
+
+      function handleUpdate() {
+        console.log(this.value);
+      }
+
+      // listen for a change event
+      inputs.forEach((input) => input.addEventListener("change", handleUpdate));
+      inputs.forEach((input) =>
+        input.addEventListener("mousemove", handleUpdate)
+      );
+    </script>
   </body>
 </html>
