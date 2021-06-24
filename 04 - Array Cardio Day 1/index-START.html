@@ -186,6 +186,18 @@
         "car",
         "truck",
       ];
+
+      const transportation = data.reduce(function (obj, item) {
+        // console.log(item);
+        // if there is not obj[item] set initial to zero
+        if (!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+
+      console.log(transportation);
     </script>
   </body>
 </html>
