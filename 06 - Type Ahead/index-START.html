@@ -42,9 +42,15 @@
 
         const html = matchArray
           .map((place) => {
+            // code to highlight the letters of the search term in the result
+            const regex = new RegExp(this.value, "gi");
+            const cityName = place.city.replace(
+              regex,
+              `<span class ="hl">${this.value}</span>`
+            );
             return `
           <li>
-            <span class="name">${place.city}, ${place.state}</span>
+            <span class="name">${cityName}, ${place.state}</span>
             <span class="population">${place.population}</span>
           </li>
           `;
