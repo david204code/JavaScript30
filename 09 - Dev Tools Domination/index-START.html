@@ -75,6 +75,13 @@
       console.count("Extol the Lord at all times");
 
       // timing
+      console.time("fetching data");
+      fetch("https://api.github.com/users/david204code")
+        .then((data) => data.json())
+        .then((data) => {
+          console.timeEnd("fetching data");
+          console.log(data);
+        });
     </script>
   </body>
 </html>
