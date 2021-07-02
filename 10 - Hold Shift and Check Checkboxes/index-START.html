@@ -94,6 +94,22 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      // select the checkbox
+      const checkboxes = document.querySelectorAll(
+        '.inbox input[type="checkbox"]'
+      );
+
+      console.log(checkboxes);
+
+      function handleCheck(e) {
+        console.log("click", e);
+      }
+
+      // listen to when one of them get click/changes
+      checkboxes.forEach((checkbox) =>
+        checkbox.addEventListener("click", handleCheck)
+      );
+    </script>
   </body>
 </html>
