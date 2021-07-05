@@ -28,7 +28,8 @@ function updateButton() {
 }
 
 function skip() {
-  console.log(this.dataset);
+  // console.log(this.dataset.skip);
+  video.currentTime += parseFloat(this.dataset.skip);
 }
 
 // Hook up the event listeners
