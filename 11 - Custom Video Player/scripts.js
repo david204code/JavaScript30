@@ -61,4 +61,16 @@ ranges.forEach((range) => range.addEventListener("change", handleRangeUpdate));
 ranges.forEach((range) =>
   range.addEventListener("mousemove", handleRangeUpdate)
 );
+
 progress.addEventListener("click", scrub);
+// create a flag variable to the mousemove
+let mousedown = false;
+// progress.addEventListener("mousemove", scrub);
+// progress.addEventListener("mousemove", () => {
+//   if (mousedown) {
+//     scrub();
+//   }
+// });
+progress.addEventListener("mousemove", (e) => mousedown && scrub(e));
+progress.addEventListener("mousedown", () => (mousedown = true));
+progress.addEventListener("mouseup", () => (mousedown = false));
