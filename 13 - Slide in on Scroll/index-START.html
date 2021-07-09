@@ -249,18 +249,21 @@
         sliderImages.forEach((sliderImage) => {
           // half way through the image
           const slideInAt =
-            (window.scrollY + window.innerHeight) - sliderImage.height / 2;
+            window.scrollY + window.innerHeight - sliderImage.height / 2;
           // console.log(slideInAt);
 
           // bottom of the image
           const imageBottom = sliderImage.offsetTop + sliderImage.height;
+          // console.log(sliderImage.offsetTop + "+" + sliderImage.height + "=" + imageBottom);
           const isHalfShown = slideInAt > sliderImage.offsetTop;
+          // console.log(slideInAt + " + " + sliderImage.offsetTop + " = " + isHalfShown);
           const isNotScrollPast = window.scrollY < imageBottom;
+          // console.log(window.scrollY, imageBottom);
 
-          if(isHalfShown && isNotScrollPast){
-            sliderImage.classList.add('active');
+          if (isHalfShown && isNotScrollPast) {
+            sliderImage.classList.add("active");
           } else {
-            sliderImage.classList.remove('active');
+            sliderImage.classList.remove("active");
           }
         });
       }
