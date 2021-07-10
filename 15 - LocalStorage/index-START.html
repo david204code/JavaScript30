@@ -60,7 +60,16 @@
 
       function addItem(e) {
         e.preventDefault();
-        console.log("Hello");
+        // console.log("Hello");
+
+        const text = this.querySelector("[name=item]").value;
+        const item = {
+          // ES6 short hand text
+          text: text,
+          done: false,
+        };
+        // console.log(item);
+        this.reset();
       }
 
       // listen to the submit event
