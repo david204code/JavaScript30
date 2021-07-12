@@ -92,8 +92,14 @@
           .join("");
       }
 
+      function toggleDone(e) {
+        if (!e.target.matches("input")) return; //skip this unless it's an input
+        // console.log(e.target);
+      }
+
       // listen to the submit event
       addItems.addEventListener("submit", addItem);
+      itemsList.addEventListener("click", toggleDone);
 
       // page load
       populateList(items, itemsList);
