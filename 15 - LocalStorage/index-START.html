@@ -71,6 +71,9 @@
         // console.log(item);
         items.push(item);
         populateList(items, itemsList);
+        // set listens to localStorage and stringify it
+        localStorage.setItem("items", JSON.stringify(items));
+        // will get key = items.... value [object Object]
         this.reset();
       }
 
