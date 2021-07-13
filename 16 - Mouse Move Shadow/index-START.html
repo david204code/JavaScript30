@@ -36,6 +36,7 @@
     <script>
       const hero = document.querySelector(".hero");
       const text = document.querySelector("h1");
+      const walk = 100; // 100px
 
       function shadow(e) {
         // console.log(e);
@@ -56,6 +57,10 @@
         }
 
         // console.log(x, y);
+        // set the logic for offset
+        const xWalk = Math.round((x / width) * walk - walk / 2);
+        const yWalk = Math.round((y / width) * walk - walk / 2);
+        // console.log(xWalk, yWalk);
       }
 
       hero.addEventListener("mousemove", shadow);
