@@ -60,6 +60,11 @@
         "An Old Dog",
       ];
 
+      // new function to target the second word
+      function strip(bandName) {
+        return bandName.replace(/^(a |the |an )/i, "").trim();
+      }
+
       // sort the array into alphabetical order
       const sortedBands = bands.sort(function (a, b) {
         if (a > b) {
