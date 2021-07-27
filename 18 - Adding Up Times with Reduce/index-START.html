@@ -66,9 +66,12 @@
       <li data-time="4:04">Video 58</li>
     </ul>
     <script>
-      // look for anytime with a data-time attribute
-      const timeNotes = document.querySelectorAll("[data-time]");
-      console.log(timeNotes);
+      // look for anytime with a data-time attribute .... nodeList to array
+      const timeNotes = Array.from(document.querySelectorAll("[data-time]"));
+      // console.log(timeNotes);
+
+      // after nodeList into an array of time string
+      const seconds = timeNotes.map((node) => node.dataset.time);
     </script>
   </body>
 </html>
