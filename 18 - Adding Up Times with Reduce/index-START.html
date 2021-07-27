@@ -78,8 +78,13 @@
           // ES6 destructing
           const [mins, secs] = timeCode.split(":").map(parseFloat);
           return mins * 60 + secs;
-
           // console.log(mins, secs);
+        })
+
+        // .map takes in an array and retrun and array
+        // reduce takes in an array and return anything..number,object
+        .reduce((total, vidSeconds) => {
+          return total + vidSeconds;
         });
     </script>
   </body>
