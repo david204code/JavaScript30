@@ -71,7 +71,16 @@
       // console.log(timeNotes);
 
       // after nodeList into an array of time string
-      const seconds = timeNotes.map((node) => node.dataset.time);
+      const seconds = timeNotes
+        .map((node) => node.dataset.time)
+        // turn it into just second
+        .map((timeCode) => {
+          // ES6 destructing
+          const [mins, secs] = timeCode.split(":").map(parseFloat);
+          return mins * 60 + secs;
+
+          // console.log(mins, secs);
+        });
     </script>
   </body>
 </html>
