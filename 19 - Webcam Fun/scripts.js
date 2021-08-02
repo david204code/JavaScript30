@@ -17,4 +17,10 @@ function getVideo() {
     });
 }
 
+function paintToCanavas() {
+  const width = video.videoWidth;
+  const height = video.videoHeight;
+  console.log(width, height);
+}
+
 getVideo();
