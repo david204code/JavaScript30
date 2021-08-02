@@ -20,7 +20,14 @@ function getVideo() {
 function paintToCanavas() {
   const width = video.videoWidth;
   const height = video.videoHeight;
-  console.log(width, height);
+  // console.log(width, height);
+  canvas.width = width;
+  canvas.height = height;
+
+  // take image from webcam and put it into canvas
+  return setInterval(() => {
+    ctx.drawImage(video, 0, 0, width, height);
+  }, 16);
 }
 
 getVideo();
